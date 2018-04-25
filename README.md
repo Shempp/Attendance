@@ -33,7 +33,7 @@ In developing
 
 ## License
 
-This project is licensed under the GNU Affero General Public License v3.0 License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU Affero General Public License v3.0 License - see the [LICENSE](LICENSE) file for details
 
 The project uses [ExcelFormat Library](https://www.codeproject.com/Articles/42504/ExcelFormat-Library) which is licensed under The Code Project Open License 1.02 - see the [CPOL-1.02.txt](CPOL-1.02.txt) file for details
 
