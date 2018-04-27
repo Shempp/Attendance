@@ -11,13 +11,13 @@ For the program to work correctly, you may need the following components:
 
 ## How to use?
 
-	1. Open the program **Database** and add to the database all students;
-	2. Open the file [conf.ini](conf.ini) and enter the necessary settings for the program **Attendance**;
-	3. Open the program **Attendance** and conduct student identification with a reader device (you will need to run the program with each new lesson);
-	4. Close the program **Attendance**. You will see the created .xls file with the name of the current date and time;
-	5. It is necessary to collect all information at the end of the semester. Create a ***.xls*** group file where all information will be stored;
-	6. Run the program **Copy** and select all the necessary files from which you can copy the information created by the program **Attendance**;
-	7. Finally it remains to fill in the surnames. Open the program **Database**, synchronize the database file ***Database.xls*** and our created file from item 5.
+	1. Open the program Database and add to the database all students;
+	2. Open the file conf.ini and enter the necessary settings for the program Attendance;
+	3. Open the program Attendance and conduct student identification with a reader device (you will need to run the program with each new lesson);
+	4. Close the program Attendance. You will see the created .xls file with the name of the current date and time;
+	5. It is necessary to collect all information at the end of the semester. Create a .xls group file where all information will be stored;
+	6. Run the program Copy and select all the necessary files from which you can copy the information created by the program Attendance;
+	7. Finally it remains to fill in the surnames. Open the program Database, synchronize the database file Database.xls and our created file from item 5.
 
 ## Built With
 
