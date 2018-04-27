@@ -1,4 +1,4 @@
-#include "Copy.h"
+ï»¿#include "Copy.h"
 
 bool CheckLang(int n, char* str)
 {
@@ -88,11 +88,11 @@ void CopyInf(char *fileIn, char *fileOut)
 		cellOut->SetWString(wBuf.c_str());
 
 		cellOut = sheetOut->Cell(6, 0);
-		cellOut->SetWString(L"¹");
+		cellOut->SetWString(L"â„–");
 		cellOut = sheetOut->Cell(6, 1);
 		cellOut->SetString("ID");
 		cellOut = sheetOut->Cell(6, 2);
-		cellOut->SetWString(L"ÔÈÎ");
+		cellOut->SetWString(L"Ð¤Ð˜Ðž");
 				
 		for (row = 1 ; row < maxRows; row++)
 		{
@@ -232,28 +232,28 @@ void SelectFileTo(char *filesIn, int size, bool multipleFiles)
 	InitOpenFile(ofnSecond, fileOut, sizeof(fileOut));
 	ofnSecond.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
 
-	message = "Âûáåðèòå Excel-ôàéë, â êîòîðûé íåîáõîäèìî ñêîïèðîâàòü èíôîðìàöèþ. "
-			"\nÂàæíî: Excel-ôàéë äîëæíåí áûòü çàêðûò è ïóòü ê ôàéëó íå äîëæåí ñîäåðæàòü ðóññêèõ ñèìâîëîâ.";
+	message = "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Excel-Ñ„Ð°Ð¹Ð», Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ. "
+			"\nÐ’Ð°Ð¶Ð½Ð¾: Excel-Ñ„Ð°Ð¹Ð» Ð´Ð¾Ð»Ð¶Ð½ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ Ð·Ð°ÐºÑ€Ñ‹Ñ‚ Ð¸ Ð¿ÑƒÑ‚ÑŒ Ðº Ñ„Ð°Ð¹Ð»Ñƒ Ð½Ðµ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ Ñ€ÑƒÑÑÐºÐ¸Ñ… ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð².";
 	MessageBox(NULL, message.c_str(), "Copy", MB_OK | MB_ICONINFORMATION);
 
 	if (GetOpenFileName(&ofnSecond))
 	{
 		if (CheckLang(strlen(fileOut), fileOut) == false)
 		{
-			MessageBox(0, "Error: Ïóòü ê Excel-ôàéëó ñîäåðæèò ðóññêèå ñèìâîëû.", "Copy", MB_OK | MB_ICONERROR);
+			MessageBox(0, "Error: ÐŸÑƒÑ‚ÑŒ Ðº Excel-Ñ„Ð°Ð¹Ð»Ñƒ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ñ€ÑƒÑÑÐºÐ¸Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹.", "Copy", MB_OK | MB_ICONERROR);
 			exit(0);
 		}
 		if (!multipleFiles)
 		{
 			if (!(memcmp(fileOut, filesIn, sizeof(fileOut))))
 			{
-				MessageBox(0, "Error: Âûáðàí îäèí è òîò æå ôàéë. Ïîæàëóéñòà, ïîâòîðèòå ïîïûòêó.", "Copy", MB_OK | MB_ICONERROR);
+				MessageBox(0, "Error: Ð’Ñ‹Ð±Ñ€Ð°Ð½ Ð¾Ð´Ð¸Ð½ Ð¸ Ñ‚Ð¾Ñ‚ Ð¶Ðµ Ñ„Ð°Ð¹Ð». ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ.", "Copy", MB_OK | MB_ICONERROR);
 				exit(0);
 			}
 
 			CopyInf(filesIn, fileOut);
 
-			message = "Èíôîðìàöèÿ èç ôàéëà " + (string)filesIn + " â ôàéë " + (string)fileOut + " óñïåøíî ñêîïèðîâàíà.";
+			message = "Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° " + (string)filesIn + " Ð² Ñ„Ð°Ð¹Ð» " + (string)fileOut + " ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð°.";
 			MessageBox(0, message.c_str(), "Copy", MB_OK | MB_ICONINFORMATION);
 		}
 		else
@@ -286,7 +286,7 @@ void SelectFileTo(char *filesIn, int size, bool multipleFiles)
 
 				CopyInf(dirFile, fileOut);
 
-				message = "Èíôîðìàöèÿ èç ôàéëà " + (string)dirFile + " â ôàéë " + (string)fileOut + " óñïåøíî ñêîïèðîâàíà.";
+				message = "Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° " + (string)dirFile + " Ð² Ñ„Ð°Ð¹Ð» " + (string)fileOut + " ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð°.";
 				MessageBox(0, message.c_str(), "Copy", MB_OK | MB_ICONINFORMATION);
 
 				pCh = strtok(NULL, "@");
@@ -296,7 +296,7 @@ void SelectFileTo(char *filesIn, int size, bool multipleFiles)
 	}
 	else
 	{	
-		MessageBox(0, "Ïðîãðàììà çàâåðøåíà êëàâèøåé \"Îòìåíà\". \nÊîïèðîâàíèå îòìåíåíî.", "Copy", MB_OK | MB_ICONINFORMATION);
+		MessageBox(0, "ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð° ÐºÐ»Ð°Ð²Ð¸ÑˆÐµÐ¹ \"ÐžÑ‚Ð¼ÐµÐ½Ð°\". \nÐšÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¾Ñ‚Ð¼ÐµÐ½ÐµÐ½Ð¾.", "Copy", MB_OK | MB_ICONINFORMATION);
 		exit(0);
 	}
 }
@@ -311,8 +311,8 @@ void SelectFilesFrom()
 	ZeroMemory(&ofnFirst, sizeof(ofnFirst));
 	InitOpenFile(ofnFirst, filesIn, sizeof(filesIn));
 
-	message = "Âûáåðèòå Excel-ôàéëû, èç êîòîðûõ íåîáõîäèìî ñêîïèðîâàòü èíôîðìàöèþ. "
-			  "\nÂàæíî: Excel-ôàéëû äîëæíû áûòü çàêðûòû è ïóòè ê äàííûì ôàéëàì íå äîëæíû ñîäåðæàòü ðóññêèõ ñèìâîëîâ.";
+	message = "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Excel-Ñ„Ð°Ð¹Ð»Ñ‹, Ð¸Ð· ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ. "
+			  "\nÐ’Ð°Ð¶Ð½Ð¾: Excel-Ñ„Ð°Ð¹Ð»Ñ‹ Ð´Ð¾Ð»Ð¶Ð½Ñ‹ Ð±Ñ‹Ñ‚ÑŒ Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ñ‹ Ð¸ Ð¿ÑƒÑ‚Ð¸ Ðº Ð´Ð°Ð½Ð½Ñ‹Ð¼ Ñ„Ð°Ð¹Ð»Ð°Ð¼ Ð½Ðµ Ð´Ð¾Ð»Ð¶Ð½Ñ‹ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ Ñ€ÑƒÑÑÐºÐ¸Ñ… ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð².";
 					
 	MessageBox(NULL, message.c_str(), "Copy", MB_OK | MB_ICONINFORMATION);
 	if (GetOpenFileName(&ofnFirst))
@@ -322,7 +322,7 @@ void SelectFilesFrom()
 		{
 			if (CheckLang(strlen(filesIn), filesIn) == false)
 			{
-				message = "Error: Ïóòü ê îäíîìó èç âûáðàííûõ Excel-ôàéëîâ ñîäåðæèò ðóññêèå ñèìâîëû.";
+				message = "Error: ÐŸÑƒÑ‚ÑŒ Ðº Ð¾Ð´Ð½Ð¾Ð¼Ñƒ Ð¸Ð· Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ñ‹Ñ… Excel-Ñ„Ð°Ð¹Ð»Ð¾Ð² ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ñ€ÑƒÑÑÐºÐ¸Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹.";
 				MessageBox(NULL, message.c_str(), "Copy", MB_OK | MB_ICONERROR);
 				exit(0);
 			}
@@ -334,7 +334,7 @@ void SelectFilesFrom()
 		{
 			if (CheckLang(strlen(filesIn), filesIn) == false)
 			{
-				message = "Error: Ïóòü ê Excel-ôàéëó ñîäåðæèò ðóññêèå ñèìâîëû.";
+				message = "Error: ÐŸÑƒÑ‚ÑŒ Ðº Excel-Ñ„Ð°Ð¹Ð»Ñƒ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ñ€ÑƒÑÑÐºÐ¸Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹.";
 				MessageBox(NULL, message.c_str(), "Copy", MB_OK | MB_ICONERROR);
 				exit(0);
 			}
@@ -344,8 +344,8 @@ void SelectFilesFrom()
 	}
 	else
 	{	
-		MessageBox(0, "Ïðîãðàììà çàâåðøåíà êëàâèøåé \"Îòìåíà\", ëèáî áûëî âûáðàíî ñëèøêîì áîëüøîå êîëè÷åñòâî "
-			"ôàéëîâ äëÿ êîïèðîâàíèÿ (ðåêîìåíäóåìîå çíà÷åíèå 5). \nÊîïèðîâàíèå îòìåíåíî.", "Copy", MB_OK | MB_ICONINFORMATION);
+		MessageBox(0, "ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð° ÐºÐ»Ð°Ð²Ð¸ÑˆÐµÐ¹ \"ÐžÑ‚Ð¼ÐµÐ½Ð°\", Ð»Ð¸Ð±Ð¾ Ð±Ñ‹Ð»Ð¾ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð¾ ÑÐ»Ð¸ÑˆÐºÐ¾Ð¼ Ð±Ð¾Ð»ÑŒÑˆÐ¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ "
+			"Ñ„Ð°Ð¹Ð»Ð¾Ð² Ð´Ð»Ñ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ (Ñ€ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑƒÐµÐ¼Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ 5). \nÐšÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¾Ñ‚Ð¼ÐµÐ½ÐµÐ½Ð¾.", "Copy", MB_OK | MB_ICONINFORMATION);
 		exit(0);
 	}
 }
